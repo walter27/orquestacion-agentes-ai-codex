@@ -1,0 +1,23 @@
+{
+  "name": "harness-subagents-todo",
+  "version": "1.0.0",
+  "private": true,
+  "type": "commonjs",
+  "scripts": {
+    "start": "npx http-server app -p 3000",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "review": "bash scripts/review-before-commit.sh"
+  },
+  "devDependencies": {
+    "http-server": "^14.1.1",
+    "jest": "^30.0.0",
+    "jest-environment-jsdom": "^30.0.0"
+  },
+  "jest": {
+    "testEnvironment": "jsdom",
+    "testMatch": [
+      "**/tests/**/*.test.js"
+    ]
+  }
+}

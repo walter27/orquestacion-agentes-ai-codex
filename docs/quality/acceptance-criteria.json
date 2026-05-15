@@ -1,0 +1,36 @@
+{
+  "project": "hello-todo-subagents",
+  "criteria": [
+    {
+      "id": "AC-001",
+      "description": "UI inicial con titulo, input, boton y lista.",
+      "passes": true
+    },
+    {
+      "id": "AC-002",
+      "description": "Agregar tarea no vacia.",
+      "passes": false
+    },
+    {
+      "id": "AC-003",
+      "description": "No agregar tareas vacias.",
+      "passes": false
+    },
+    {
+      "id": "AC-004",
+      "description": "Marcar tarea como completada.",
+      "passes": false
+    },
+    { "id": "AC-005", "description": "Eliminar tarea.", "passes": false },
+    {
+      "id": "AC-006",
+      "description": "Actualizar contador de pendientes.",
+      "passes": false
+    },
+    {
+      "id": "AC-007",
+      "description": "Persistir en localStorage.",
+      "passes": false
+    }
+  ]
+}

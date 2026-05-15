@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Hello TODO</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app-shell" aria-labelledby="app-title">
+      <section class="todo-card">
+        <header class="todo-header">
+          <p class="eyebrow">HTML, CSS y JavaScript puro</p>
+          <h1 id="app-title">Hello TODO</h1>
+          <p class="intro">Organiza tus tareas pendientes en una lista simple.</p>
+        </header>
+
+        <form class="todo-form" aria-label="Nueva tarea">
+          <label class="sr-only" for="todo-input">Nueva tarea</label>
+          <input
+            id="todo-input"
+            data-testid="todo-input"
+            type="text"
+            name="todo"
+            placeholder="Escribe una tarea"
+            autocomplete="off"
+          />
+          <button data-testid="add-button" type="button">Agregar</button>
+        </form>
+
+        <ul data-testid="todo-list" class="todo-list" aria-label="Lista de tareas"></ul>
+
+        <footer class="todo-summary" aria-live="polite">
+          Pendientes: <span data-testid="pending-count">0</span>
+        </footer>
+      </section>
+    </main>
+
+    <script src="main.js" defer></script>
+  </body>
+</html>

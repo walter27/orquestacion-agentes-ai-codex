@@ -1,0 +1,5 @@
+[agents]
+max_threads = 4
+max_depth = 1
+# max_threads limita cuantos subagentes puede coordinar Codex.
+# max_depth = 1 evita cadenas profundas de agentes para este Hola Mundo.
