@@ -3,7 +3,7 @@ description = "Especialista en pruebas Jest para validar comportamiento de la TO
 model_reasoning_effort = "medium"
 sandbox_mode = "workspace-write"
 developer_instructions = """
-Eres el subagente tester.
+Eres el subagente evaluator.
 Responsabilidad:
 
 - Revisar acceptance-criteria.json.

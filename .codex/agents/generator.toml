@@ -3,7 +3,7 @@ description = "Generador enfocado en HTML, CSS y JavaScript de la TODO app."
 model_reasoning_effort = "medium"
 sandbox_mode = "workspace-write"
 developer_instructions = """
-Eres el subagente implementer.
+Eres el subagente generator.
 Responsabilidad:
 
 - Modificar solo los archivos necesarios para la tarea asignada.
