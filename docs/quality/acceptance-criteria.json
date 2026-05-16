@@ -9,12 +9,12 @@
     {
       "id": "AC-002",
       "description": "Agregar tarea no vacia.",
-      "passes": false
+      "passes": true
     },
     {
       "id": "AC-003",
       "description": "No agregar tareas vacias.",
-      "passes": false
+      "passes": true
     },
     {
       "id": "AC-004",

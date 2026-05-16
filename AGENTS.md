@@ -20,7 +20,7 @@ No uses prompts sueltos para simular roles. Usa los custom agents del repositori
 ## Subagentes esperados
 
 - planner: divide el trabajo y actualiza el plan.
-- generador: modifica app/ y codigo fuente.
+- generator: modifica app/ y codigo fuente.
 - evaluator: crea y ejecuta pruebas Jest.
 - reviewer: revisa calidad, evidencia y criterios.
 
@@ -29,6 +29,6 @@ No uses prompts sueltos para simular roles. Usa los custom agents del repositori
 Antes de pedir commit, ejecutar:
 
 ```bash
-npm test
+pnpm test
 bash scripts/review-before-commit.sh
 ```

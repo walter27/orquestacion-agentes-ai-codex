@@ -1,5 +1,10 @@
 const fs = require("fs");
 const path = require("path");
+const { TextDecoder, TextEncoder } = require("util");
+
+global.TextEncoder = global.TextEncoder || TextEncoder;
+global.TextDecoder = global.TextDecoder || TextDecoder;
+
 const { JSDOM } = require("jsdom");
 
 const appDir = path.resolve(process.cwd(), "app");
@@ -13,6 +18,18 @@ function loadAppDom() {
   const script = fs.readFileSync(mainPath, "utf8");
   dom.window.eval(script);
   return dom;
+}
+
+function getTodoControls(document) {
+  const input = document.querySelector('[data-testid="todo-input"]');
+  const addButton = document.querySelector('[data-testid="add-button"]');
+  const list = document.querySelector('[data-testid="todo-list"]');
+
+  expect(input).not.toBeNull();
+  expect(addButton).not.toBeNull();
+  expect(list).not.toBeNull();
+
+  return { input, addButton, list };
 }
 
 describe("AC-001 initial TODO UI", () => {
@@ -69,4 +86,33 @@ describe("AC-001 initial TODO UI", () => {
     expect(css).toMatch(/\.todo-list\s+\.completed\s*{[\s\S]*text-decoration:\s*line-through/);
     expect(css).toMatch(/@media\s*\(max-width:/);
   });
+});
+
+describe("T2 todo creation validation", () => {
+  test("AC-002 adds a non-empty task to the todo list", () => {
+    const dom = loadAppDom();
+    const { document } = dom.window;
+    const { input, addButton, list } = getTodoControls(document);
+
+    input.value = "Comprar leche";
+    addButton.click();
+
+    expect(list.children).toHaveLength(1);
+    expect(list.children[0].textContent).toContain("Comprar leche");
+  });
+
+  test.each(["", "   ", "\n\t  "])(
+    "AC-003 does not add an empty or whitespace-only task (%p)",
+    (blankTask) => {
+      const dom = loadAppDom();
+      const { document } = dom.window;
+      const { input, addButton, list } = getTodoControls(document);
+
+      input.value = blankTask;
+      addButton.click();
+
+      expect(list.children).toHaveLength(0);
+      expect(list.textContent).toBe("");
+    },
+  );
 });

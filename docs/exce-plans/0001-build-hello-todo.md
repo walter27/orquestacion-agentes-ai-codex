@@ -22,7 +22,7 @@ Criterios: AC-001
 
 ### T2. Agregar tarea y validar vacios
 
-Estado: pendiente
+Estado: completada
 Criterios: AC-002, AC-003
 
 ### T3. Completar tarea y actualizar contador
